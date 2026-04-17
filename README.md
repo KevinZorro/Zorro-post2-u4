@@ -10,10 +10,7 @@ Proyecto Spring Boot con cuatro patrones de comportamiento GoF:
 `GestorPedidosService` publica eventos sin conocer a ningún suscriptor.
 Cada suscriptor se registra automáticamente con `@EventListener`:
 GestorPedidosService ──publica──▶ PedidoConfirmadoEvent
-│
-┌────────┼──────────┐
-▼ ▼ ▼
-EmailNotifier InventarioUpdater AuditoriaLogger
+EmailNotifier &  InventarioUpdater & AuditoriaLogger
 
 
 **Agregar un nuevo suscriptor** sin modificar nada existente:
@@ -58,7 +55,7 @@ Ver Post-Contenido 1 (`pom.xml` compartido, paquetes `cor/` y `command/`).
 ## Ejecución
 
 ```bash
-git clone https://github.com/<usuario>/Zorro-post2-u4.git
+git clone https://github.com/KevinZorro/Zorro-post2-u4.git
 cd Zorro-post2-u4
 mvn clean package
 mvn spring-boot:run
@@ -148,3 +145,9 @@ Estado actual: Pedido{id='P-001', estado='CONFIRMADO', total=40500.00}
 --- Deshaciendo última acción (descuento) ---
 [UNDO] Descuento revertido: $45000.00 restaurado
 Estado después de undo: Pedido{id='P-001', estado='CONFIRMADO', total=45000.00}
+
+--- Evidencias de Tests ---
+
+<img width="686" height="512" alt="image" src="https://github.com/user-attachments/assets/4c573ff6-322b-43f2-be2d-44a7bbf23e5b" />
+<img width="692" height="572" alt="image" src="https://github.com/user-attachments/assets/fcdd0f37-497d-439f-8adb-4d68a5af383d" />
+
